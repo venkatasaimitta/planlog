@@ -1,0 +1,298 @@
+2022-06-29T13:21:13.3435928Z ##[section]Starting: Terraform : Plan
+2022-06-29T13:21:13.3622521Z ==============================================================================
+2022-06-29T13:21:13.3622814Z Task         : Terraform
+2022-06-29T13:21:13.3623127Z Description  : Execute terraform commands to manage resources on AzureRM, Amazon Web Services(AWS) and Google Cloud Platform(GCP)
+2022-06-29T13:21:13.3623418Z Version      : 3.201.18
+2022-06-29T13:21:13.3623600Z Author       : Microsoft Corporation
+2022-06-29T13:21:13.3623870Z Help         : [Learn more about this task](https://aka.ms/AAf0uqr)
+2022-06-29T13:21:13.3624204Z ==============================================================================
+2022-06-29T13:21:13.6517184Z [command]F:\Build\agent1\_work\_tool\terraform\1.2.3\x64\terraform.exe providers
+2022-06-29T13:21:15.4965586Z 
+2022-06-29T13:21:15.4966111Z Providers required by configuration:
+2022-06-29T13:21:15.4966271Z .
+2022-06-29T13:21:15.4966498Z ├── provider[registry.terraform.io/hashicorp/azuread] 1.6.0
+2022-06-29T13:21:15.4967028Z ├── provider[registry.terraform.io/databrickslabs/databricks] 0.3.7
+2022-06-29T13:21:15.4967296Z ├── provider[registry.terraform.io/hashicorp/azurerm] 2.85.0
+2022-06-29T13:21:15.4967589Z ├── provider[registry.terraform.io/hashicorp/time]
+2022-06-29T13:21:15.4967835Z └── provider[registry.terraform.io/hashicorp/random] 2.2.1
+2022-06-29T13:21:15.4968458Z 
+2022-06-29T13:21:15.4968802Z Providers required by state:
+2022-06-29T13:21:15.4969005Z 
+2022-06-29T13:21:15.4969279Z     provider[registry.terraform.io/databrickslabs/databricks]
+2022-06-29T13:21:15.4969429Z 
+2022-06-29T13:21:15.4969898Z     provider[registry.terraform.io/hashicorp/azurerm]
+2022-06-29T13:21:15.4970086Z 
+2022-06-29T13:21:15.4970260Z     provider[registry.terraform.io/hashicorp/time]
+2022-06-29T13:21:15.4970394Z 
+2022-06-29T13:21:15.4970527Z [33m[33m╷[0m[0m
+2022-06-29T13:21:15.4970855Z [33m│[0m [0m[1m[33mWarning: [0m[0m[1mVersion constraints inside provider configuration blocks are deprecated[0m
+2022-06-29T13:21:15.4971182Z [33m│[0m [0m
+2022-06-29T13:21:15.4971438Z [33m│[0m [0m[0m  on provider.tf line 6, in provider "azurerm":
+2022-06-29T13:21:15.4971741Z [33m│[0m [0m   6:   version = [4m"=2.85.0"[0m // 1.44.0[0m
+2022-06-29T13:21:15.4972881Z [33m│[0m [0m
+2022-06-29T13:21:15.4973129Z [33m│[0m [0mTerraform 0.13 and earlier allowed provider version constraints inside the
+2022-06-29T13:21:15.4973525Z [33m│[0m [0mprovider configuration block, but that is now deprecated and will be
+2022-06-29T13:21:15.4973861Z [33m│[0m [0mremoved in a future version of Terraform. To silence this warning, move the
+2022-06-29T13:21:15.4974170Z [33m│[0m [0mprovider version constraint into the required_providers block.
+2022-06-29T13:21:15.4974383Z [33m│[0m [0m
+2022-06-29T13:21:15.4974577Z [33m│[0m [0m(and one more similar warning elsewhere)
+2022-06-29T13:21:15.4974763Z [33m╵[0m[0m
+2022-06-29T13:21:15.4974880Z [0m[0m
+2022-06-29T13:21:15.5014867Z [command]F:\Build\agent1\_work\_tool\terraform\1.2.3\x64\terraform.exe plan -var TF_VAR_HIVE_ADMIN_PASSWORD=*** -var TF_VAR_ORACLE_ADMIN_PASSWORD=*** -var TF_SP_CLIENT_SECRET=*** -var TF_VAR_NETEZZA_ADMIN_PASSWORD=*** -detailed-exitcode
+2022-06-29T13:21:33.8044983Z [0m[1mdata.azurerm_client_config.current: Reading...[0m[0m
+2022-06-29T13:21:33.8047429Z [0m[1mazurerm_resource_group.myresourcegroup: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg][0m
+2022-06-29T13:21:34.0136433Z [0m[1mazurerm_network_security_group.nsg: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.Network/networkSecurityGroups/cdf-stage-nsg][0m
+2022-06-29T13:21:34.0140074Z [0m[1mazurerm_virtual_network.vnet: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.Network/virtualNetworks/cdf-stage-vnet][0m
+2022-06-29T13:21:34.0141634Z [0m[1mazurerm_data_factory.adf: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf][0m
+2022-06-29T13:21:34.0146055Z [0m[1mazurerm_log_analytics_workspace.adf_log_workspace: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.OperationalInsights/workspaces/cdf-stage-loganalytics][0m
+2022-06-29T13:21:34.1207236Z [0m[1mdata.azurerm_client_config.current: Read complete after 0s [id=2022-06-29 13:21:34.1192055 +0000 UTC][0m
+2022-06-29T13:21:34.1243203Z [0m[1mazurerm_key_vault.kv: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.KeyVault/vaults/cdf-stage-akv][0m
+2022-06-29T13:21:34.3332162Z [0m[1mazurerm_subnet.private_subnet: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.Network/virtualNetworks/cdf-stage-vnet/subnets/cdf-stage-private-subnet][0m
+2022-06-29T13:21:34.3333462Z [0m[1mazurerm_subnet.public_subnet: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.Network/virtualNetworks/cdf-stage-vnet/subnets/cdf-stage-public-subnet][0m
+2022-06-29T13:21:34.7028315Z [0m[1mazurerm_subnet_network_security_group_association.private-sn-nsg-assoc: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.Network/virtualNetworks/cdf-stage-vnet/subnets/cdf-stage-private-subnet][0m
+2022-06-29T13:21:34.7215870Z [0m[1mazurerm_subnet_network_security_group_association.public-sn-nsg-assoc: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.Network/virtualNetworks/cdf-stage-vnet/subnets/cdf-stage-public-subnet][0m
+2022-06-29T13:21:34.7254478Z [0m[1mazurerm_storage_account.storage_account: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.Storage/storageAccounts/cdfstagesrg][0m
+2022-06-29T13:21:34.7616958Z [0m[1mazurerm_data_factory_integration_runtime_self_hosted.ir: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/integrationruntimes/cdf-stage-ir][0m
+2022-06-29T13:21:34.8918618Z [0m[1mazurerm_databricks_workspace.dbworkspace: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.Databricks/workspaces/cdf-stage-workspace][0m
+2022-06-29T13:21:35.0966138Z [0m[1mazurerm_data_factory_linked_service_key_vault.akvls: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/linkedservices/cdf-stage-akvls][0m
+2022-06-29T13:21:35.0967670Z [0m[1mazurerm_key_vault_secret.hive-pwd: Refreshing state... [id=https://cdf-stage-akv.vault.azure.net/secrets/hive6-stage/7cd07f7cb0fb43468115582825787d41][0m
+2022-06-29T13:21:35.0968357Z [0m[1mazurerm_key_vault_secret.oracle-pwd: Refreshing state... [id=https://cdf-stage-akv.vault.azure.net/secrets/oracle6-stage/822eb0115e3d40f88bafe2913bd2ec2d][0m
+2022-06-29T13:21:35.0969041Z [0m[1mazurerm_key_vault_secret.netezza-pwd: Refreshing state... [id=https://cdf-stage-akv.vault.azure.net/secrets/netezza6-stage/0448182e2a5f48b29eca578f1847f1f1][0m
+2022-06-29T13:21:35.0969740Z [0m[1mazurerm_key_vault_access_policy.adfpolicy: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.KeyVault/vaults/cdf-stage-akv/objectId/2494abee-d389-4c99-b4ca-fa6d2303058c][0m
+2022-06-29T13:21:35.4876211Z [0m[1mdatabricks_cluster.dbcluster: Refreshing state... [id=0629-130520-bfief8nl][0m
+2022-06-29T13:21:35.6027271Z [0m[1mazurerm_data_factory_linked_custom_service.clihive-linked-service: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/linkedservices/cdf-stage-lsclihive][0m
+2022-06-29T13:21:35.6068434Z [0m[1mtime_sleep.wait_10_minutes: Refreshing state... [id=2022-06-29T13:12:16Z][0m
+2022-06-29T13:21:35.6075962Z [0m[1mazurerm_data_factory_linked_custom_service.oracle-linked-service: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/linkedservices/cdf-stage-lsoracle][0m
+2022-06-29T13:21:35.6076945Z [0m[1mazurerm_data_factory_linked_custom_service.hive-linked-service: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/linkedservices/cdf-stage-lshive][0m
+2022-06-29T13:21:35.6085759Z [0m[1mazurerm_data_factory_linked_custom_service.netezza-linked-service: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/linkedservices/cdf-stage-lsnetezza][0m
+2022-06-29T13:21:35.7850635Z [0m[1mazurerm_data_factory_custom_dataset.oracledataset: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/datasets/dataset-oracle][0m
+2022-06-29T13:21:35.7882641Z [0m[1mazurerm_data_factory_custom_dataset.datasethivecli: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/datasets/dataset-hiveclinical][0m
+2022-06-29T13:21:35.7883954Z [0m[1mazurerm_data_factory_custom_dataset.dataset: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/datasets/dataset-hive][0m
+2022-06-29T13:21:35.7892839Z [0m[1mazurerm_data_factory_custom_dataset.datasetnetezza: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/datasets/dataset-netezza][0m
+2022-06-29T13:21:36.9528282Z [0m[1mazurerm_storage_container.bacpac: Refreshing state... [id=https://cdfstagesrg.blob.core.windows.net/cdfstage][0m
+2022-06-29T13:21:36.9536225Z [0m[1mazurerm_storage_account_network_rules.storage_account_network_rules: Refreshing state... [id=/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.Storage/storageAccounts/cdfstagesrg][0m
+2022-06-29T13:21:37.1634711Z 
+2022-06-29T13:21:37.1635577Z Terraform used the selected providers to generate the following execution
+2022-06-29T13:21:37.1636472Z plan. Resource actions are indicated with the following symbols:
+2022-06-29T13:21:37.1636805Z   [33m~[0m update in-place
+2022-06-29T13:21:37.1637199Z [31m-[0m/[32m+[0m destroy and then create replacement
+2022-06-29T13:21:37.1637431Z [0m
+2022-06-29T13:21:37.1637752Z Terraform will perform the following actions:
+2022-06-29T13:21:37.1638014Z 
+2022-06-29T13:21:37.1645076Z [1m  # azurerm_data_factory_custom_dataset.dataset[0m will be updated in-place[0m[0m
+2022-06-29T13:21:37.1645698Z [0m  [33m~[0m[0m resource "azurerm_data_factory_custom_dataset" "dataset" {
+2022-06-29T13:21:37.1646373Z         [1m[0mid[0m[0m                    = "/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/datasets/dataset-hive"
+2022-06-29T13:21:37.1647221Z         [1m[0mname[0m[0m                  = "dataset-hive"
+2022-06-29T13:21:37.1647710Z       [33m~[0m [0m[1m[0mtype_properties_json[0m[0m  = jsonencode(
+2022-06-29T13:21:37.1648020Z           [33m~[0m [0m{
+2022-06-29T13:21:37.1648300Z               [32m+[0m [0mname       = "Hivedataset"
+2022-06-29T13:21:37.1649216Z               [32m+[0m [0mproperties = {
+2022-06-29T13:21:37.1649424Z                   [32m+[0m [0mannotations       = []
+2022-06-29T13:21:37.1649686Z                   [32m+[0m [0mlinkedServiceName = {
+2022-06-29T13:21:37.1649922Z                       [32m+[0m [0mreferenceName = "cdf-stage-lshive"
+2022-06-29T13:21:37.1650211Z                       [32m+[0m [0mtype          = "LinkedServiceReference"
+2022-06-29T13:21:37.1650413Z                     }
+2022-06-29T13:21:37.1650624Z                   [32m+[0m [0mschema            = []
+2022-06-29T13:21:37.1650854Z                   [32m+[0m [0mtype              = "HiveObject"
+2022-06-29T13:21:37.1651072Z                 }
+2022-06-29T13:21:37.1651284Z               [32m+[0m [0mtype       = "Microsoft.DataFactory/factories/datasets"
+2022-06-29T13:21:37.1651513Z             }
+2022-06-29T13:21:37.1651632Z         )
+2022-06-29T13:21:37.1651826Z         [90m# (5 unchanged attributes hidden)[0m[0m
+2022-06-29T13:21:37.1651966Z 
+2022-06-29T13:21:37.1652139Z         [90m# (1 unchanged block hidden)[0m[0m
+2022-06-29T13:21:37.1652483Z     }
+2022-06-29T13:21:37.1652574Z 
+2022-06-29T13:21:37.1654054Z [1m  # azurerm_data_factory_custom_dataset.datasethivecli[0m will be updated in-place[0m[0m
+2022-06-29T13:21:37.1654447Z [0m  [33m~[0m[0m resource "azurerm_data_factory_custom_dataset" "datasethivecli" {
+2022-06-29T13:21:37.1654895Z         [1m[0mid[0m[0m                    = "/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/datasets/dataset-hiveclinical"
+2022-06-29T13:21:37.1655339Z         [1m[0mname[0m[0m                  = "dataset-hiveclinical"
+2022-06-29T13:21:37.1655592Z       [33m~[0m [0m[1m[0mtype_properties_json[0m[0m  = jsonencode(
+2022-06-29T13:21:37.1655819Z           [33m~[0m [0m{
+2022-06-29T13:21:37.1656005Z               [32m+[0m [0mname       = "Hivedataset"
+2022-06-29T13:21:37.1656246Z               [32m+[0m [0mproperties = {
+2022-06-29T13:21:37.1656449Z                   [32m+[0m [0mannotations       = []
+2022-06-29T13:21:37.1657019Z                   [32m+[0m [0mlinkedServiceName = {
+2022-06-29T13:21:37.1657258Z                       [32m+[0m [0mreferenceName = "cdf-stage-lsclihive"
+2022-06-29T13:21:37.1657554Z                       [32m+[0m [0mtype          = "LinkedServiceReference"
+2022-06-29T13:21:37.1657918Z                     }
+2022-06-29T13:21:37.1658211Z                   [32m+[0m [0mschema            = []
+2022-06-29T13:21:37.1658443Z                   [32m+[0m [0mtype              = "HiveObject"
+2022-06-29T13:21:37.1658652Z                 }
+2022-06-29T13:21:37.1658864Z               [32m+[0m [0mtype       = "Microsoft.DataFactory/factories/datasets"
+2022-06-29T13:21:37.1659088Z             }
+2022-06-29T13:21:37.1659230Z         )
+2022-06-29T13:21:37.1659398Z         [90m# (5 unchanged attributes hidden)[0m[0m
+2022-06-29T13:21:37.1659536Z 
+2022-06-29T13:21:37.1659715Z         [90m# (1 unchanged block hidden)[0m[0m
+2022-06-29T13:21:37.1659877Z     }
+2022-06-29T13:21:37.1659979Z 
+2022-06-29T13:21:37.1664530Z [1m  # azurerm_data_factory_custom_dataset.datasetnetezza[0m will be updated in-place[0m[0m
+2022-06-29T13:21:37.1664916Z [0m  [33m~[0m[0m resource "azurerm_data_factory_custom_dataset" "datasetnetezza" {
+2022-06-29T13:21:37.1665353Z         [1m[0mid[0m[0m                    = "/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/datasets/dataset-netezza"
+2022-06-29T13:21:37.1665783Z         [1m[0mname[0m[0m                  = "dataset-netezza"
+2022-06-29T13:21:37.1666057Z       [33m~[0m [0m[1m[0mtype_properties_json[0m[0m  = jsonencode(
+2022-06-29T13:21:37.1666260Z           [33m~[0m [0m{
+2022-06-29T13:21:37.1666473Z               [32m+[0m [0mname       = "NetezzaTable"
+2022-06-29T13:21:37.1666973Z               [32m+[0m [0mproperties = {
+2022-06-29T13:21:37.1667207Z                   [32m+[0m [0mannotations       = []
+2022-06-29T13:21:37.1667957Z                   [32m+[0m [0mlinkedServiceName = {
+2022-06-29T13:21:37.1668232Z                       [32m+[0m [0mreferenceName = "cdf-stage-lsnetezza"
+2022-06-29T13:21:37.1668496Z                       [32m+[0m [0mtype          = "LinkedServiceReference"
+2022-06-29T13:21:37.1668901Z                     }
+2022-06-29T13:21:37.1669163Z                   [32m+[0m [0mschema            = []
+2022-06-29T13:21:37.1669421Z                   [32m+[0m [0mtype              = "NetezzaTable"
+2022-06-29T13:21:37.1669633Z                 }
+2022-06-29T13:21:37.1669764Z             }
+2022-06-29T13:21:37.1669882Z         )
+2022-06-29T13:21:37.1670331Z         [90m# (5 unchanged attributes hidden)[0m[0m
+2022-06-29T13:21:37.1670479Z 
+2022-06-29T13:21:37.1670659Z         [90m# (1 unchanged block hidden)[0m[0m
+2022-06-29T13:21:37.1670815Z     }
+2022-06-29T13:21:37.1670921Z 
+2022-06-29T13:21:37.1674454Z [1m  # azurerm_data_factory_custom_dataset.oracledataset[0m will be updated in-place[0m[0m
+2022-06-29T13:21:37.1674826Z [0m  [33m~[0m[0m resource "azurerm_data_factory_custom_dataset" "oracledataset" {
+2022-06-29T13:21:37.1675260Z         [1m[0mid[0m[0m                    = "/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.DataFactory/factories/cdf-stage-adf/datasets/dataset-oracle"
+2022-06-29T13:21:37.1675687Z         [1m[0mname[0m[0m                  = "dataset-oracle"
+2022-06-29T13:21:37.1675934Z       [33m~[0m [0m[1m[0mtype_properties_json[0m[0m  = jsonencode(
+2022-06-29T13:21:37.1676167Z           [33m~[0m [0m{
+2022-06-29T13:21:37.1676350Z               [32m+[0m [0mname       = "Oracle"
+2022-06-29T13:21:37.1676577Z               [32m+[0m [0mproperties = {
+2022-06-29T13:21:37.1676812Z                   [32m+[0m [0mannotations       = []
+2022-06-29T13:21:37.1677042Z                   [32m+[0m [0mlinkedServiceName = {
+2022-06-29T13:21:37.1677301Z                       [32m+[0m [0mreferenceName = "cdf-stage-lsoracle"
+2022-06-29T13:21:37.1677835Z                       [32m+[0m [0mtype          = "LinkedServiceReference"
+2022-06-29T13:21:37.1678062Z                     }
+2022-06-29T13:21:37.1678242Z                   [32m+[0m [0mschema            = []
+2022-06-29T13:21:37.1678504Z                   [32m+[0m [0mtype              = "OracleTable"
+2022-06-29T13:21:37.1678688Z                 }
+2022-06-29T13:21:37.1678925Z               [32m+[0m [0mtype       = "Microsoft.DataFactory/factories/datasets"
+2022-06-29T13:21:37.1679126Z             }
+2022-06-29T13:21:37.1679429Z         )
+2022-06-29T13:21:37.1679671Z         [90m# (5 unchanged attributes hidden)[0m[0m
+2022-06-29T13:21:37.1679827Z 
+2022-06-29T13:21:37.1680318Z         [90m# (1 unchanged block hidden)[0m[0m
+2022-06-29T13:21:37.1680521Z     }
+2022-06-29T13:21:37.1680602Z 
+2022-06-29T13:21:37.1748809Z [1m  # azurerm_key_vault.kv[0m will be updated in-place[0m[0m
+2022-06-29T13:21:37.1749237Z [0m  [33m~[0m[0m resource "azurerm_key_vault" "kv" {
+2022-06-29T13:21:37.1749519Z       [33m~[0m [0m[1m[0maccess_policy[0m[0m                   = [
+2022-06-29T13:21:37.1749788Z             [90m# (1 unchanged element hidden)[0m[0m
+2022-06-29T13:21:37.1750128Z             {
+2022-06-29T13:21:37.1750295Z                 application_id          = ""
+2022-06-29T13:21:37.1750515Z                 certificate_permissions = []
+2022-06-29T13:21:37.1750707Z                 key_permissions         = [
+2022-06-29T13:21:37.1750905Z                     "Get",
+2022-06-29T13:21:37.1751059Z                     "List",
+2022-06-29T13:21:37.1751242Z                     "Create",
+2022-06-29T13:21:37.1751386Z                 ]
+2022-06-29T13:21:37.1751942Z                 object_id               = "bb678fa7-53cd-4fb4-9e9c-116ded8c4fd3"
+2022-06-29T13:21:37.1753866Z                 secret_permissions      = [
+2022-06-29T13:21:37.1754083Z                     "Backup",
+2022-06-29T13:21:37.1754245Z                     "Delete",
+2022-06-29T13:21:37.1754442Z                     "Get",
+2022-06-29T13:21:37.1754599Z                     "List",
+2022-06-29T13:21:37.1754788Z                     "Recover",
+2022-06-29T13:21:37.1754951Z                     "Restore",
+2022-06-29T13:21:37.1755133Z                     "Set",
+2022-06-29T13:21:37.1755285Z                     "Purge",
+2022-06-29T13:21:37.1755454Z                 ]
+2022-06-29T13:21:37.1755620Z                 storage_permissions     = [
+2022-06-29T13:21:37.1755813Z                     "Get",
+2022-06-29T13:21:37.1756895Z                     "List",
+2022-06-29T13:21:37.1757257Z                     "Set",
+2022-06-29T13:21:37.1757409Z                 ]
+2022-06-29T13:21:37.1758415Z                 tenant_id               = "***"
+2022-06-29T13:21:37.1758617Z             },
+2022-06-29T13:21:37.1758772Z           [31m-[0m [0m{
+2022-06-29T13:21:37.1758994Z               [31m-[0m [0mapplication_id          = ""
+2022-06-29T13:21:37.1759221Z               [31m-[0m [0mcertificate_permissions = []
+2022-06-29T13:21:37.1759476Z               [31m-[0m [0mkey_permissions         = [
+2022-06-29T13:21:37.1759675Z                   [31m-[0m [0m"Get",
+2022-06-29T13:21:37.1759890Z                   [31m-[0m [0m"Create",
+2022-06-29T13:21:37.1760082Z                   [31m-[0m [0m"List",
+2022-06-29T13:21:37.1760296Z                   [31m-[0m [0m"Restore",
+2022-06-29T13:21:37.1760489Z                   [31m-[0m [0m"Recover",
+2022-06-29T13:21:37.1760715Z                   [31m-[0m [0m"UnwrapKey",
+2022-06-29T13:21:37.1760912Z                   [31m-[0m [0m"WrapKey",
+2022-06-29T13:21:37.1761124Z                   [31m-[0m [0m"Purge",
+2022-06-29T13:21:37.1761314Z                   [31m-[0m [0m"Encrypt",
+2022-06-29T13:21:37.1761525Z                   [31m-[0m [0m"Decrypt",
+2022-06-29T13:21:37.1761718Z                   [31m-[0m [0m"Sign",
+2022-06-29T13:21:37.1761931Z                   [31m-[0m [0m"Verify",
+2022-06-29T13:21:37.1762091Z                 ]
+2022-06-29T13:21:37.1762650Z               [31m-[0m [0mobject_id               = "5b839071-065b-4468-8f59-257ade2c842c"
+2022-06-29T13:21:37.1762914Z               [31m-[0m [0msecret_permissions      = [
+2022-06-29T13:21:37.1763148Z                   [31m-[0m [0m"Get",
+2022-06-29T13:21:37.1763332Z                   [31m-[0m [0m"List",
+2022-06-29T13:21:37.1763515Z                 ]
+2022-06-29T13:21:37.1763693Z               [31m-[0m [0mstorage_permissions     = []
+2022-06-29T13:21:37.1764093Z               [31m-[0m [0mtenant_id               = "***"
+2022-06-29T13:21:37.1764274Z             },
+2022-06-29T13:21:37.1764441Z           [31m-[0m [0m{
+2022-06-29T13:21:37.1764631Z               [31m-[0m [0mapplication_id          = ""
+2022-06-29T13:21:37.1764879Z               [31m-[0m [0mcertificate_permissions = []
+2022-06-29T13:21:37.1765130Z               [31m-[0m [0mkey_permissions         = [
+2022-06-29T13:21:37.1765331Z                   [31m-[0m [0m"Get",
+2022-06-29T13:21:37.1765544Z                   [31m-[0m [0m"Create",
+2022-06-29T13:21:37.1765736Z                   [31m-[0m [0m"List",
+2022-06-29T13:21:37.1765951Z                   [31m-[0m [0m"Restore",
+2022-06-29T13:21:37.1766147Z                   [31m-[0m [0m"Recover",
+2022-06-29T13:21:37.1766365Z                   [31m-[0m [0m"UnwrapKey",
+2022-06-29T13:21:37.1766562Z                   [31m-[0m [0m"WrapKey",
+2022-06-29T13:21:37.1766772Z                   [31m-[0m [0m"Purge",
+2022-06-29T13:21:37.1766960Z                   [31m-[0m [0m"Encrypt",
+2022-06-29T13:21:37.1767358Z                   [31m-[0m [0m"Decrypt",
+2022-06-29T13:21:37.1767550Z                   [31m-[0m [0m"Sign",
+2022-06-29T13:21:37.1767760Z                   [31m-[0m [0m"Verify",
+2022-06-29T13:21:37.1768081Z                 ]
+2022-06-29T13:21:37.1768330Z               [31m-[0m [0mobject_id               = "2494abee-d389-4c99-b4ca-fa6d2303058c"
+2022-06-29T13:21:37.1768597Z               [31m-[0m [0msecret_permissions      = [
+2022-06-29T13:21:37.1768830Z                   [31m-[0m [0m"Get",
+2022-06-29T13:21:37.1769013Z                   [31m-[0m [0m"List",
+2022-06-29T13:21:37.1769198Z                 ]
+2022-06-29T13:21:37.1769382Z               [31m-[0m [0mstorage_permissions     = []
+2022-06-29T13:21:37.1769815Z               [31m-[0m [0mtenant_id               = "***"
+2022-06-29T13:21:37.1770004Z             },
+2022-06-29T13:21:37.1770150Z         ]
+2022-06-29T13:21:37.1770480Z         [1m[0mid[0m[0m                              = "/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.KeyVault/vaults/cdf-stage-akv"
+2022-06-29T13:21:37.1770904Z         [1m[0mname[0m[0m                            = "cdf-stage-akv"
+2022-06-29T13:21:37.1771182Z         [1m[0mtags[0m[0m                            = {}
+2022-06-29T13:21:37.1771411Z         [90m# (12 unchanged attributes hidden)[0m[0m
+2022-06-29T13:21:37.1771555Z 
+2022-06-29T13:21:37.1771736Z         [90m# (1 unchanged block hidden)[0m[0m
+2022-06-29T13:21:37.1771886Z     }
+2022-06-29T13:21:37.1771998Z 
+2022-06-29T13:21:37.1772272Z [1m  # azurerm_log_analytics_workspace.adf_log_workspace[0m must be [1m[31mreplaced[0m[0m
+2022-06-29T13:21:37.1772861Z [0m[31m-[0m/[32m+[0m[0m resource "azurerm_log_analytics_workspace" "adf_log_workspace" {
+2022-06-29T13:21:37.1773390Z       [33m~[0m [0m[1m[0mid[0m[0m                         = "/subscriptions//subscriptions_id/resourceGroups/cdf-stage-rg/providers/Microsoft.OperationalInsights/workspaces/cdf-stage-loganalytics" [33m->[0m [0m(known after apply)
+2022-06-29T13:21:37.1773993Z       [33m~[0m [0m[1m[0mname[0m[0m                       = "cdf-Stage-loganalytics" [33m->[0m [0m"cdf-stage-loganalytics" [31m# forces replacement[0m[0m
+2022-06-29T13:21:37.1774376Z       [32m+[0m [0m[1m[0mportal_url[0m[0m                 = (known after apply)
+2022-06-29T13:21:37.1774698Z       [33m~[0m [0m[1m[0mprimary_shared_key[0m[0m         = (sensitive value)
+2022-06-29T13:21:37.1775126Z       [33m~[0m [0m[1m[0mretention_in_days[0m[0m          = 30 [33m->[0m [0m(known after apply)
+2022-06-29T13:21:37.1775458Z       [33m~[0m [0m[1m[0msecondary_shared_key[0m[0m       = (sensitive value)
+2022-06-29T13:21:37.1775792Z       [31m-[0m [0m[1m[0mtags[0m[0m                       = {} [90m->[0m [0m[90mnull[0m[0m
+2022-06-29T13:21:37.1776168Z       [33m~[0m [0m[1m[0mworkspace_id[0m[0m               = "b46dea6f-e274-4ffa-9c4f-e00761fc63a5" [33m->[0m [0m(known after apply)
+2022-06-29T13:21:37.1776506Z         [90m# (6 unchanged attributes hidden)[0m[0m
+2022-06-29T13:21:37.1776665Z     }
+2022-06-29T13:21:37.1776744Z 
+2022-06-29T13:21:37.1776931Z [0m[1mPlan:[0m 1 to add, 5 to change, 1 to destroy.
+2022-06-29T13:21:37.1777336Z [0m[33m╷[0m[0m
+2022-06-29T13:21:37.1777703Z [33m│[0m [0m[1m[33mWarning: [0m[0m[1mVersion constraints inside provider configuration blocks are deprecated[0m
+2022-06-29T13:21:37.1777999Z [33m│[0m [0m
+2022-06-29T13:21:37.1778263Z [33m│[0m [0m[0m  on provider.tf line 6, in provider "azurerm":
+2022-06-29T13:21:37.1778593Z [33m│[0m [0m   6:   version = [4m"=2.85.0"[0m // 1.44.0[0m
+2022-06-29T13:21:37.1778784Z [33m│[0m [0m
+2022-06-29T13:21:37.1779054Z [33m│[0m [0mTerraform 0.13 and earlier allowed provider version constraints inside the
+2022-06-29T13:21:37.1779370Z [33m│[0m [0mprovider configuration block, but that is now deprecated and will be
+2022-06-29T13:21:37.1779719Z [33m│[0m [0mremoved in a future version of Terraform. To silence this warning, move the
+2022-06-29T13:21:37.1780033Z [33m│[0m [0mprovider version constraint into the required_providers block.
+2022-06-29T13:21:37.1780256Z [33m│[0m [0m
+2022-06-29T13:21:37.1780584Z [33m│[0m [0m(and one more similar warning elsewhere)
+2022-06-29T13:21:37.1780785Z [33m╵[0m[0m
+2022-06-29T13:21:37.1780900Z [90m
+2022-06-29T13:21:37.1781163Z ─────────────────────────────────────────────────────────────────────────────[0m
+2022-06-29T13:21:37.1781328Z 
+2022-06-29T13:21:37.1781517Z Note: You didn't use the -out option to save this plan, so Terraform can't
+2022-06-29T13:21:37.1781809Z guarantee to take exactly these actions if you run "terraform apply" now.
+2022-06-29T13:21:37.3510798Z ##[section]Finishing: Terraform : Plan
